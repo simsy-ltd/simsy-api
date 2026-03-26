@@ -1,0 +1,56 @@
+name: Bug Report
+description: Something isn't working correctly
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report
+        Help us fix it by providing clear reproduction steps.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the bug clearly.
+      placeholder: "e.g. CPL portal shows 'connection active' but the SIM has no data connectivity"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened?
+      description: Describe the expected behaviour.
+      placeholder: "e.g. Portal status should reflect actual SIM connectivity state"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we trigger this bug?
+      placeholder: |
+        1. Go to CPL portal
+        2. Select SIM ICCID xxx
+        3. Check status display
+        4. Compare with actual network connectivity
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - "Critical — service down or data loss"
+        - "High — major feature broken"
+        - "Medium — workaround available"
+        - "Low — cosmetic or minor"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Screenshots, logs, device/router details, network info.
+    validations:
+      required: false
