@@ -1,0 +1,72 @@
+name: Product Requirements Document
+description: Requirements document for a new feature or product
+title: "[PRD] "
+labels: ["prd"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Product Requirements Document
+        This template ensures every feature has clear requirements before development begins.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What problem are we solving? Who has this problem?
+      placeholder: "e.g. Customers cannot self-activate SIMs without calling support, creating a bottleneck"
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What are we building? Describe the approach at a high level.
+      placeholder: "e.g. A self-service activation portal behind Cloudflare Access that allows customers to..."
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Functional requirements
+      description: What must it do? List the specific capabilities.
+      placeholder: |
+        1. Customer can enter SIM ICCID and select network
+        2. System validates SIM against SIMSY inventory
+        3. Activation request sent to network API
+        4. Customer receives confirmation with connection details
+    validations:
+      required: true
+  - type: textarea
+    id: non-functional
+    attributes:
+      label: Non-functional requirements
+      description: Performance, security, compliance, scalability considerations.
+      placeholder: |
+        - Must sit behind Cloudflare Access (authenticated users only)
+        - Must log all activation attempts for audit
+        - Response time < 5 seconds
+    validations:
+      required: false
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: What are we explicitly NOT building in this iteration?
+      placeholder: "e.g. Bulk activation, API access (future phase), network selection AI"
+    validations:
+      required: false
+  - type: textarea
+    id: success
+    attributes:
+      label: Success metrics
+      description: How do we measure whether this worked?
+      placeholder: "e.g. 80% of activations completed without support intervention within 30 days of launch"
+    validations:
+      required: false
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: What does this depend on? Other systems, APIs, teams?
+    validations:
+      required: false
