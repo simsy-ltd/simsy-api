@@ -1,0 +1,56 @@
+name: Task
+description: A piece of work to be done
+title: "[Task] "
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## New Task
+        Fill in the details below. Keep it clear and concise.
+  - type: textarea
+    id: what
+    attributes:
+      label: What needs to be done?
+      description: Describe the task clearly. What is the expected outcome?
+      placeholder: "e.g. Write the CPL setup guide covering router configuration, SIM activation, and troubleshooting"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does this matter?
+      description: Business context — why is this important right now?
+      placeholder: "e.g. First CPL customer is live and has no documentation to reference"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How do we know this is done? Be specific.
+      placeholder: |
+        - Setup guide covers X, Y, Z
+        - Published to docs site
+        - Reviewed by Alex
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies or blockers
+      description: Does this depend on anything else being done first?
+      placeholder: "e.g. Needs CPL portal access credentials from Alex"
+    validations:
+      required: false
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Estimated effort
+      options:
+        - "Small (< 2 hours)"
+        - "Medium (half day)"
+        - "Large (1-2 days)"
+        - "XL (3+ days)"
+    validations:
+      required: false
